@@ -15,7 +15,7 @@ The following datafiles were provided by Udacity's Datascience with Python cours
 The CSV files contain bikeshare data for people in three large U.S. metropolitan cities, Washington, New York City, and Chicago. All three files contain trip information including start/end locations, duration of trips, and some of the details about the user type. The New York City and Chicago files have some additional user details, such as gender and birth year.
 
 ### Credits
-The Udacity Python final project files were provided by (motivate)[https://motivateco.com/], a bike share system provider for many major cities in the United States, to uncover bike share usage patterns.
+The Udacity Python final project files were provided by [motivate](https://motivateco.com/), a bike share system provider for many major cities in the United States, to uncover bike share usage patterns.
 
 Additionally, with respect to Python resources, the following documentation was utilized:
 * [Pandas](https://pandas.pydata.org/) - A popular data library that aids Python users in creating Excel-type Python objects for data manipulation and analysis
