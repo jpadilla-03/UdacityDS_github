@@ -1,7 +1,5 @@
 import time
 import pandas as pd
-import numpy as np
-import sys
 from datetime import timedelta
 
 CITY_DATA = { 'chicago': 'chicago.csv',
