@@ -1,17 +1,23 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+# Juno Padilla's Udacity Data Science Final Github Project
+### Date created: June 28, 2025
 
-### Date created
-Include the date you created this project and README file.
-
-### Project Title
-Replace the Project Title
+### Project Title: Juno Padilla's Python Bike Share Analysis
 
 ### Description
-Describe what your project is about and what it does
+The bikeshare_2.py Python file creates an interactive experience for users to obtain statistical information from bikeshare data collected in Washington, New York City, and Chicago. As bicycle-sharing systems become more popular in major cities in the United States, this Python file offers stakeholders an insight into what patterns bikeshare users have. Leveraging this knowledge, one can determine the infrastructure and resources needed to produce a thriving bikesharing program in their community. 
 
 ### Files used
-Include the files used
+The following datafiles were provided by Udacity's Datascience with Python course: 
+1. washington.csv
+2. new_york_city.csv
+3. chicago.csv
+
+The CSV files contain bikeshare data for people in three large U.S. metropolitan cities, Washington, New York City, and Chicago. All three files contain trip information including start/end locations, duration of trips, and some of the details about the user type. The New York City and Chicago files have some additional user details, such as gender and birth year.
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+The Udacity Python final project files were provided by [motivate](https://motivateco.com/), a bike share system provider for many major cities in the United States, to uncover bike share usage patterns.
+
+Additionally, with respect to Python resources, the following documentation was utilized:
+* [Pandas](https://pandas.pydata.org/) - A popular data library that aids Python users in creating Excel-type Python objects for data manipulation and analysis
+* [Datetime](https://docs.python.org/3/library/datetime.html) - A native Python library that was used to standardize dates across all three CSV data files
 
