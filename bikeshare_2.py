@@ -19,8 +19,8 @@ def get_month():
 
     try: 
         month = months.index(month_choice)+1
-        valid_month = True
-        return month, valid_month
+        invalid_month = False
+        return month, invalid_month
     except ValueError:
         print('An invalid month was chosen. Check spelling and ensure you are choosing from the first six months of the year.')
         return get_month()
@@ -38,8 +38,8 @@ def get_day():
     day_choice = input('\nWhich day? Please type a day M, Tu, W, Th, F, Sa, Su.\n').strip().lower()
     try: 
         day = days[day_choice]
-        valid_day = True
-        return day, valid_day
+        invalid_day = False
+        return day, invalid_day
     except KeyError:
         print('An ivalid day choice was inputted. Check spelling and ensure you are typing the desired day in the proper format.')
         return get_day()
@@ -76,35 +76,36 @@ def get_filters():
     # get user input for city (chicago, new york city, washington). 
     city = get_city()
 
-    valid_input = False
-    while not valid_input:
+    invalid_input = True
+    while invalid_input:
         # Determine how/if a user wants to filter on time
         time_filter = input('\nWould you like to filter the data by "month", "day", "both", or "none" for not time filter?\n').strip().lower()
         if time_filter == 'month':
             # get user input for month (all, january, february, ... , june)
-            month, valid_input = get_month()
+            month, invalid_input = get_month()
         elif time_filter == 'day':
             # get user input for day of week (all, monday, tuesday, ... sunday)
-            day, valid_input = get_day()
+            day, invalid_input = get_day()
         elif time_filter == 'both':
             # Change month and day vars to account for both filtering
             print('Filtering for both day and month')
             
             # Get month info first. Break out of while loop if an invalid month was chosen
-            month, valid_input = get_month()
+            month, invalid_input = get_month()
 
-            # Get day info second. Break out of while loop if a valid day was chosen
-            day, valid_input = get_day()
+            if not invalid_input:
+                # Get day info second. Break out of while loop if a valid day was chosen
+                day, invalid_input = get_day()
         elif time_filter == 'none':
             # Change month and day vars to not filter on either
             print('No filter will be applied. All available days and months will be considered.')
             month = 'all'
             day = 'all'
-            valid_input = True
+            invalid_input = False
         else:
             print('Invalid choice. Try running the program again and ensure that you are selecting the proper filter by'\
                     ' choosing an input listed in quotation marks.')
-            valid_input = False
+            invalid_input = True
     print('-'*40)
     return city, month, day
 
@@ -240,7 +241,7 @@ def trip_duration_stats(df):
     
     # display total travel time
     trips_duration_total = df['Trip Duration'].sum()
-    print(f'Total duration of all trips: {timedelta(seconds=int(trips_duration_total))}; count: {df['Trip Duration'].size}')
+    print(f"Total duration of all trips: {timedelta(seconds=int(trips_duration_total))}; count: {df['Trip Duration'].size}")
 
     # display mean travel time
     avg_duration_in_min = df['Trip Duration'].mean() / 60
